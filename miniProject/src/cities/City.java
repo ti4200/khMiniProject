@@ -11,7 +11,14 @@ public class City {
 	private int CBill;
 	private String Owner;
 	
+	
+	
 	public City(){}
+	public City(String name,int grandCost){
+		this.name=name;
+		this.grandCost=grandCost;
+	}
+	
 	public City(String name, int grandCost, int sBUpCost, int mBUpCost, int iBupCost, int cStatus, int cBill,
 			String owner) {
 		super();
@@ -24,6 +31,7 @@ public class City {
 		CBill = cBill;
 		Owner = owner;
 	}
+	
 	public String getName() {
 		return name;
 	}
