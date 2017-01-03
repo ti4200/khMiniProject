@@ -10,15 +10,12 @@ public class City {
 	private int CStatus;
 	private int CBill;
 	private String Owner;
-	
-	
-	
+
 	public City(){}
 	public City(String name,int grandCost){
 		this.name=name;
 		this.grandCost=grandCost;
 	}
-	
 	public City(String name, int grandCost, int sBUpCost, int mBUpCost, int iBupCost, int cStatus, int cBill,
 			String owner) {
 		super();
@@ -26,12 +23,11 @@ public class City {
 		this.grandCost = grandCost;
 		this.sBUpCost = sBUpCost;
 		this.mBUpCost = mBUpCost;
-		IBupCost = iBupCost;
-		CStatus = cStatus;
-		CBill = cBill;
-		Owner = owner;
+		this.IBupCost = iBupCost;
+		this.CStatus = cStatus;
+		this.CBill = cBill;
+		this.Owner = owner;
 	}
-	
 	public String getName() {
 		return name;
 	}
@@ -80,9 +76,32 @@ public class City {
 	public void setOwner(String owner) {
 		Owner = owner;
 	}
-	public void CreateCity(){}
-	public void CalBill(){}
-	public void UpgradeCost(){}
-	
-	
+	public void CreateCity(int num){
+		if(num>=1&&num<=3){
+			if(this.CStatus<=3){
+				this.CStatus+=num;
+			}
+		}
+	}
+	public void CalBill(){
+		if(this.CStatus==0)
+			this.CBill=(this.grandCost)*2;
+		else if(this.CStatus==1)
+			this.CBill=(this.grandCost+10)*2;
+		else if(this.CStatus==2)
+			this.CBill=(this.grandCost+15)*2;
+		else if(this.CStatus==3)
+			this.CBill=(this.grandCost+20)*2;
+	}
+	public void UpgradeCost(){
+		if(CStatus==0)
+			this.sBUpCost=10;
+			this.mBUpCost=15;
+			this.IBupCost=20;
+		if(CStatus==1)
+			this.sBUpCost=15;
+			this.mBUpCost=20;
+		if(CStatus==2)
+			this.sBUpCost=20;		
+	}
 }
